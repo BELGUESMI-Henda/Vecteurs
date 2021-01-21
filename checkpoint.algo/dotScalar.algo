@@ -1,0 +1,60 @@
+PROCEDURE dotProduct(VAR V1:[INTEGER], VAR V2[INTEGER],ps :INTEGER )
+VAR 
+  i:INTEGER;
+BEGIN
+   ps :=0;
+
+   i:=0;
+   FOR    i FROM 0 TO V1.length-1 STEP 1  DO
+    ps:=ps+ (V1[i]*V2[i]);
+   END_FOR
+END
+ALGORITHM The dot product of two orthogonal vectors .
+VAR
+   V1:[INTEGER];
+   V2[INTEGER];
+BEGIN
+   Write("enter the first vector");
+   read (V1[]);
+  Write("enter the second vector");
+   read (V2[]);  
+   dotProduct( V1, V2, ps );
+   IF (ps:=0) THEN
+       write("V1 and V2 are orthogonals");
+   
+   ELSE
+       write("V1 and V2 are not arthogonals");
+   END_IF
+   
+END
+//FUNCTION
+FUNCTION dotProduct(VAR V1:[INTEGER], VAR V2[INTEGER] )
+VAR 
+  i:INTEGER;
+  ps:=0 INTEGER;
+BEGIN
+   i:=0;
+   FOR    i FROM 0 TO V1.length-1 STEP 1  DO
+    ps:=ps+ (V1[i]*V2[i]);
+   END_FOR
+     Return ps;
+END
+ALGORITHM orthogonalVectors .
+VAR
+   V1:[INTEGER];
+   V2[INTEGER];
+   PS :INTEGER;
+BEGIN
+   Write("enter the first vector");
+   read (V1[]);
+  Write("enter the second vector");
+   read (V2[]);  
+   PS := dotProduct( V1, V2 );
+   IF (PS:=0) THEN
+       write("V1 and V2 are orthogonals");
+   
+   ELSE
+       write("V1 and V2 are not arthogonals");
+   END_IF
+   
+END
